@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit To Celcius</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .submain {
+            border: 2px solid black;
+            padding: 12px 12px;
+            margin: 12px 12px;
+            box-shadow: 10px 8px 35px 6px black;
+        }
+        #btn{
+            width: 50%;
+            margin-left: 20%;
+            border-radius: 4px;
+            padding: 4px 8px;
+            background-color: rgb(85, 93, 236);
+            color: rgb(92, 41, 41);
+            justify-self:center;
+            border: 1px solid rgb(60, 2, 2);
+            align-self: center;
+        }
+        #btn:hover{
+            background-color: rgb(70, 136, 243);
+            border: 1px solid grey;
+            color: white;
+        }
+        input{
+            /* padding: 12px 12px ; */
+            width: 80%;
+            margin: 12px 12px;
+            padding: 12px 12px;
+            
+        }
+        #putData{
+            text-align: center;
+            font-size: medium;
+            font-weight: 700;
+        }
+        #getData{
+            font-weight: 700;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="submain">
+            <div  class="divEle">
+                <input type="text" id="getData" placeholder="Enter Fahrenheit Temparature">
+            </div>
+            <button class="divEle" id="btn">Click</button>
+            <div >
+                <input class="divEle"  id="putData"type="text" disabled placeholder="Celcius temperature">
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        
+        btn.addEventListener("click",()=>{
+            // alert("Button clicked");
+            let fahrenheit = document.getElementById("getData").value;
+            // alert(fahrenheit);
+            fahrenheit = Number(fahrenheit)
+            let celcius = (5/9)*(fahrenheit-32);
+            // console.log();
+            let output = document.getElementById("putData");
+            output.value = Math.round(celcius)+" Celcius";
+        });
+        
+        
+    </script>
+</body>
+
+</html>
